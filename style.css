@@ -1,0 +1,320 @@
+
+header {
+  background-color: #ae973a; 
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  font-family: monospace;
+}
+
+
+footer {
+  background-color: #ae973a; 
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  font-family: monospace;
+}
+
+body {
+  background-color: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  padding-top: 80px; 
+  padding-bottom: 80px; 
+}
+
+/* CAT STUFF */
+#cat {
+  position: relative;
+  width: 150px;
+  height: auto;
+  margin: 70px auto 100px;
+  background-color: #6e4618;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s, all 0.5s ease-in-out;
+}
+
+.ear {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #6e4618; 
+  /* makes sure the ears are rounded (next 2 lines) */
+  border: 2px solid #000;
+  border-radius: 0 0 50% 50%; 
+}
+
+.ear .inner-ear {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background-color: #9d7a53; 
+  border-radius: 0 0 50% 50%;
+  top: 8px; 
+  left: 7px; 
+}
+
+
+.left-ear {
+  top: -25px;
+  left: 10px;
+  transform: rotate(-20deg);
+}
+
+.right-ear {
+  top: -25px;
+  right: 10px;
+  transform: rotate(20deg);
+}
+
+.face .eye {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.face .left-eye {
+  top: 50px;
+  left: 40px;
+}
+
+.face .right-eye {
+  top: 50px;
+  right: 40px;
+}
+
+
+.face .eye .pupil {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.face .nose {
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 10px;
+  background-color: #e74c3c; 
+  border-radius: 50%;
+}
+
+
+.face .mouth {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 20px;
+  border-bottom: 2px solid #000;
+  border-radius: 50%;
+}
+
+/* Cat's BODYY */
+.body {
+  position: absolute;
+  top: 150px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 150px;
+  background-color: #6e4618;
+  border-radius: 60px 60px 0 0; 
+}
+
+.body .tail {
+  position: absolute;
+  bottom: 0; 
+  right: -20px; 
+  width: 20px; 
+  height: 100px;
+  background-color: #9d7a53;
+  border-radius: 50%;
+  transform: rotate(45deg);
+
+}
+
+
+#cat.happy {
+  background-color: #ffff66;
+  transform: scale(1.3);
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+#cat.sad {
+  background-color: #87cefa;
+  transform: scale(0.9);
+}
+
+#cat.sad .mouth {
+  border-bottom: none;
+  border-top: 3px solid rgb(95, 52, 23);
+}
+
+#cat.angry {
+  background-color: #ff4500;
+  transform: rotate(10deg);
+}
+
+#cat.angry .mouth {
+  border-bottom: none;
+  border-top: 3px solid black;
+}
+
+#cat.surprised {
+  background-color: #ffa500;
+  transform: scale(1.2) rotate(5deg);
+}
+
+#cat.surprised .eye {
+  width: 30px;
+  height: 30px;
+}
+
+#cat.sleepy {
+  background-color: #d3c0d0;
+  transform: scale(1.1);
+}
+
+#cat.sleepy .eye {
+  width: 15px;
+  height: 15px;
+}
+
+#cat.sleepy .mouth {
+  border-bottom: 2px solid #000;
+  transform: translateX(-50%) scale(0.8);
+}
+
+#message-container {
+  width: 500px;
+  height: 100px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#message {
+  font-size: 20px;
+  color: #000000;
+  font-family: Arial, sans-serif;
+}
+
+#buttons-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.mood-button {
+  background-color: #f4d03f;
+  color: #000;
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.mood-button:hover {
+  background-color: #ffff66;
+}
+
+@media (max-width: 600px) {
+  #cat {
+    width: 100px;
+  }
+
+  .body {
+    width: 80px;
+    height: 100px;
+  }
+
+  #message-container {
+    width: 200px;
+    height: 100px;
+  }
+
+  #message {
+    font-size: 16px;
+  }
+
+  .mood-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@keyframes hop {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#cat.hop {
+  animation: hop 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+#cat.shake {
+  animation: shake 0.5s ease-in-out infinite;
+}
